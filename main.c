@@ -1,11 +1,3 @@
-//
-//  main.c
-//  Calendar Infinity
-//
-//  Created by Алексей Баринов on 10.12.2017.
-//  Copyright © 2017 Era Company. All rights reserved.
-//
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -17,13 +9,13 @@ int main(void)
     int year=0;
     time_t rawtime;
     struct tm * timeinfo;
-    printf("Введите день ");
+    printf("Enter day ");
     scanf("%d",&day);
-    printf("Введите месяц ");
+    printf("Enter the month ");
     scanf("%d",&month);
-    printf("Введите год ");
+    printf("Enter the year ");
     scanf("%d",&year);
-    const char * weekday[] = { "Воскресение", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"};
+    const char * weekday[] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     
     
     time(&rawtime);
@@ -37,7 +29,7 @@ int main(void)
     timeinfo->tm_isdst = 0;
     
     mktime(timeinfo);
-    printf("Это будет/было %s.\n", weekday[timeinfo->tm_wday]);
+    printf("It is/was %s.\n", weekday[timeinfo->tm_wday]);
     return 0;
 }
 
